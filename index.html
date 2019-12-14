@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <script src="javascript.js"></script>
 </head>
 
 <body>
@@ -20,9 +21,11 @@
                 <h2 class="card-title">Generate a password</h2>
                 <hr>
                 <p class="card-text">
-                    <textarea rows="6" cols="60">
-                    </textarea> </p>
-                <a class="btn btn-danger btn-lg" href="#" role="button">Generate Password</a>
+                    <!-- figure out why placeholder is not working  -->
+                    <textarea rows="6" cols="80" placeholder="Your Secure Password"> </textarea> 
+                </p>
+                <!-- figure out how to insert space between buttons -->
+                <a class="btn btn-danger btn-lg" href="#" role="button" onclick="myfunction ()">Generate Password</a>
                 <button type="button" class="btn btn-secondary btn-lg">Copy to Clipboard</button>
             </div>
         </div>
