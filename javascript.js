@@ -1,8 +1,10 @@
 
-var arrayOFSpecialChars = ['!','#', '$', '%', '&', '(', ')', '*', '+', ',', '-', '.', '/', ':', '@', '['];
+var arrayOFSpecialChars = ['!', '#', '$', '%', '&', '(', ')', '*', '+', ',', '-', '.', '/', ':', '@', '['];
 var arrayOFNum = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
 var arrayOFLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 var finalPassWord = '';
+var possibleChars = [];
+var guaranteedChars = [];
 
 function myfunction() {
 
@@ -16,73 +18,59 @@ function myfunction() {
         var SpecChar = confirm("Would you like your password to have a special character?")
         var NumChar = confirm("Would you like your password to have a Number?")
         var LowCase = confirm("Would you like your password to have a lowercase letter?")
-        var UppCase = confirm("Would you like your password to have an upper case letter?") 
+        var UppCase = confirm("Would you like your password to have an upper case letter?")
     }
 
-    // figure out what to do if conditions are met   
+    function getRandom(arr) {
+        var index = Math.floor(Math.random() * arr.length) - 1;
+        return arr[index]
+    }
+
+
     if (SpecChar) {
 
+        possibleChars.concat(arrayOFSpecialChars)
+        guaranteedChars.push(getRandom(arrayOFSpecialChars))
+    }
 
-        for (let index = 0; index < PasswordLength; index++) {
-        
-            if (index === 0){
-                finalPassWord+=arrayOFSpecialChars;
-            } else {
-                finalPassWord+=index;
-            }
-            
-        }
+    if (NumChar) {
+        possibleChars.concat(arrayOFNum)
+        guaranteedChars.push(getRandom(arrayOFNum))
+    }
+    if (LowCase) {
+        possibleChars.concat(arrayOFLetters)
+        guaranteedChars.push(getRandom(arrayOFLetters.toLowerCase))
+    }
 
-         var textAreaInput = document.querySelector('textarea');
-         textAreaInput.placeholder = finalPassWord;
+    if (UppCase) {
+        possibleChars.concat(arrayOFLetters)
+        guaranteedChars.push(getRandom(arrayOFLetters.toUpperCase))
+    }
+    var newLength = PasswordLength - guaranteedChars.length
 
-    } else if (NumChar){
+    for (let index = 0; index < newLength; index++) {
+        guaranteedChars.push(getRandom(possibleChars))
+    }
+console.log (newLength.value)
+    var textAreaInput = document.querySelector('textarea');
+    textAreaInput.textContent = newLength.value
 
-        for (let index = 0; index < PasswordLength; index++) {
-        
-            if (index === 0){
-                finalPassWord+=arrayOFNum;
-            } else {
-                finalPassWord+=index;
-            }
-            
-        }
-        var textAreaInput = document.querySelector('textarea');
-        textAreaInput.placeholder = finalPassWord;
+    // test for if all parameters are not met
+// if (SpecChar != && NumChar != && LowCase != && UppCase !=) { alert("Your password must have at least one special character, or a number, or a lower case letter or uppercase letter in order to be secure. Do you NOT want a secure password???") }
 
-    } else if (LowCase) {
-        for (let index = 0; index < PasswordLength; index++) {
-        
-            if (index === 0){
-                finalPassWord+=arrayOFLetters.toLowerCase();
-            } else {
-                finalPassWord+=index;
-            }
-            
-        }
-        var textAreaInput = document.querySelector('textarea');
-        textAreaInput.placeholder = finalPassWord;
-
-    } else if (UppCase) {
-        for (let index = 0; index < PasswordLength; index++) {
-        
-            if (index === 0){
-                finalPassWord+=arrayOFLetters.toUpperCase();
-            } else {
-                finalPassWord+=index;
-            }
-            
-        }
-        var textAreaInput = document.querySelector('textarea');
-        textAreaInput.placeholder = finalPassWord;
-
-
-    } else { alert("Your password must have at least one special character, or a number, or a lower case letter or uppercase letter in order to be secure. Do you NOT want a secure password???") }
-
-}
+// }
 
 function afunction() {
-var copyText = finalPassWord;
+    var textElement = document.getElementById("password");
+    textElement.select();
+    textElement.setSelectionRange(1, 128);
     document.execCommand("copy");
-  alert("Copied the text: " + copyText.value);
+
+    if (textElement.placeholder.length > 0) {
+        alert("Copied text to clipboard")
+    }
+    else {
+        alert("You need to generate a password to copy")
+    }
+}
 }

@@ -1,4 +1,5 @@
 textarea {
     border-style: dashed;
     border-color: rgb(168, 168, 168);
+    height: 180px;
 }
