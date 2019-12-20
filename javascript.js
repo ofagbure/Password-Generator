@@ -21,10 +21,12 @@ function myfunction() {
         var UppCase = confirm("Would you like your password to have an upper case letter?")
     }
 
-    function getRandom(arr) {
+    if (SpecChar || NumChar || LowCase || UppCase) {
+    function getRandom(arr) { 
         var index = Math.floor(Math.random() * arr.length) - 1;
         return arr[index]
     }
+    
 
     if (SpecChar) {
 
@@ -53,14 +55,14 @@ function myfunction() {
 
     var textAreaInput = document.getElementById("password");
     textAreaInput.value = guaranteedChars.join("")
+}
+else {
+    alert("Your password must have at least a special character, a number, an upper case, or a lower case letter")
+}
 
-    // test for if all parameters are not met
-// if (SpecChar != && NumChar != && LowCase != && UppCase !=) { alert("Your password must have at least one special character, or a number, or a lower case letter or uppercase letter in order to be secure. Do you NOT want a secure password???") }
-
-// }
 
 function afunction() {
-    var textElement = document.getElementById("password");
+    var textElement = document.textAreaInput.value;
     textElement.select();
     textElement.setSelectionRange(1, 128);
     document.execCommand("copy");
