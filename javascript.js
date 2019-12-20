@@ -26,34 +26,33 @@ function myfunction() {
         return arr[index]
     }
 
-
     if (SpecChar) {
 
-        possibleChars.concat(arrayOFSpecialChars)
-        guaranteedChars.push(getRandom(arrayOFSpecialChars))
+        possibleChars = possibleChars.concat(arrayOFSpecialChars)
+        guaranteedChars = guaranteedChars.concat(getRandom(arrayOFSpecialChars))
     }
 
     if (NumChar) {
-        possibleChars.concat(arrayOFNum)
-        guaranteedChars.push(getRandom(arrayOFNum))
+        possibleChars = possibleChars.concat(arrayOFNum)
+        guaranteedChars = guaranteedChars.concat(getRandom(arrayOFNum))
     }
     if (LowCase) {
-        possibleChars.concat(arrayOFLetters)
-        guaranteedChars.push(getRandom(arrayOFLetters.toLowerCase))
+        possibleChars = possibleChars.concat(arrayOFLetters)
+        guaranteedChars = guaranteedChars.concat(getRandom(arrayOFLetters).toLowerCase())
     }
 
     if (UppCase) {
-        possibleChars.concat(arrayOFLetters)
-        guaranteedChars.push(getRandom(arrayOFLetters.toUpperCase))
+        possibleChars = possibleChars.concat(arrayOFLetters)
+        guaranteedChars = guaranteedChars.concat(getRandom(arrayOFLetters).toUpperCase())
     }
     var newLength = PasswordLength - guaranteedChars.length
 
     for (let index = 0; index < newLength; index++) {
         guaranteedChars.push(getRandom(possibleChars))
     }
-console.log (newLength.value)
-    var textAreaInput = document.querySelector('textarea');
-    textAreaInput.textContent = newLength.value
+
+    var textAreaInput = document.getElementById("password");
+    textAreaInput.value = guaranteedChars.join("")
 
     // test for if all parameters are not met
 // if (SpecChar != && NumChar != && LowCase != && UppCase !=) { alert("Your password must have at least one special character, or a number, or a lower case letter or uppercase letter in order to be secure. Do you NOT want a secure password???") }
