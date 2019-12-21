@@ -59,12 +59,12 @@ function myfunction() {
 else {
     alert("Your password must have at least a special character, a number, an upper case, or a lower case letter")
 }
-
+}
 
 function afunction() {
-    var textElement = document.textAreaInput.value;
+    var copyText = finalPassWord;
     textElement.select();
-    textElement.setSelectionRange(1, 128);
+    textElement.setSelectionRange(0, 128);
     document.execCommand("copy");
 
     if (textElement.placeholder.length > 0) {
@@ -73,5 +73,4 @@ function afunction() {
     else {
         alert("You need to generate a password to copy")
     }
-}
 }
