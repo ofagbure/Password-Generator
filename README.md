@@ -10,7 +10,6 @@ If your README is very long, add a table of contents to make it easy for users t
 
 * [User Interface](#UserInterface)
 * [The Magic Behind the Interface](#TheMagicBehindTheInterface)
-* [Screenshots](#Screenshots)
 * [License](#license)
 * [Badges](#Badges)
 
@@ -22,11 +21,6 @@ The deployed website is a very basic layout. It contains enough information to a
 ## The Magic Behind the Interface
 
 The real power of this website is the javascript behind it. The code was written in such a way that the password generated is dictated in some way by input from the user. 
-
-
-## Screenshots
-
-See below for helpful pictures of what to expect from this page. 
 
 
 ## License
