@@ -27,7 +27,7 @@ The real power of this website is the javascript behind it. The code was written
 
 MIT License
 
-Copyright (c) [2019] [Olufemi Fagbure]
+Copyright (c) [2020] [Olufemi Fagbure]
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -50,5 +50,5 @@ SOFTWARE.
 
 ## Badges
 
-![GitHub last commit](https://img.shields.io/github/last-commit/ofagbure/Portfolio)
+![GitHub last commit](https://img.shields.io/github/last-commit/ofagbure/Password-Generator)
 

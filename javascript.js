@@ -47,7 +47,7 @@ function myfunction() {
         possibleChars = possibleChars.concat(arrayOFLetters)
         guaranteedChars = guaranteedChars.concat(getRandom(arrayOFLetters).toUpperCase())
     }
-    var newLength = PasswordLength - guaranteedChars.length
+      var newLength = PasswordLength - guaranteedChars.length
 
     for (let index = 0; index < newLength; index++) {
         guaranteedChars.push(getRandom(possibleChars))
