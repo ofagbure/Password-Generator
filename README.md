@@ -1,8 +1,8 @@
 # Password Generator
 
-## Description 
-
 This is a simple webpage that contains Javascript code to help users generate a password using simple logic provided by the User. The aim is to come up with a sound/ secure password that is random.
+
+Click [here](https://ofagbure/github.io/Password-Generator/) to see the deployed site!
 
 ## Table of Contents 
 
