@@ -6,8 +6,6 @@ Click [here](https://ofagbure/github.io/Password-Generator/) to see the deployed
 
 ## Table of Contents 
 
-If your README is very long, add a table of contents to make it easy for users to find what they need.
-
 * [User Interface](#UserInterface)
 * [The Magic Behind the Interface](#TheMagicBehindTheInterface)
 * [License](#license)
